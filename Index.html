@@ -52,11 +52,12 @@
 		
 		var loader = new THREE.ObjectLoader();
 
-		loader.load("bola1.json", function( group ) {
+		loader.load("MioStation.json", function( group ) {
 		mesh = group.children[0];
 			mesh.material = new THREE.MeshPhongMaterial({map: texture2});
 			mesh.position.x = 5;
 			scene.add( mesh );
+
 		});
 		
 
