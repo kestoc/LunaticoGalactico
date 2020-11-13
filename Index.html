@@ -56,7 +56,7 @@
 
 		var loader = new THREE.ObjectLoader();
 
-		loader.load("casa.json", function( group ) {
+		loader.load("carro.json", function( group ) {
 		mesh = group.children[0];
 		mesh.material = new THREE.MeshPhongMaterial({map: texture2});
 		mesh.position.x = 5;
@@ -64,7 +64,7 @@
 		});
 		var loader2 = new THREE.ObjectLoader();
 
-		loader2.load("model (6).json", function( group ) {
+		loader2.load("carro.json", function( group ) {
 		mesh = group.children[0];
 		mesh.material = new THREE.MeshPhongMaterial({map: texture2});
 		mesh.position.x = -5;
