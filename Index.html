@@ -58,7 +58,7 @@
 
 		loader.load("carro.json", function( group ) {
 		mesh = group.children[0];
-		mesh.material = new THREE.MeshPhongMaterial({map: texture2});
+		mesh.material = new THREE.MeshPhongMaterial({map: texture});
 		mesh.position.x = 5;
 		scene.add( mesh );
 		});
@@ -66,7 +66,7 @@
 
 		loader2.load("carro.json", function( group ) {
 		mesh = group.children[0];
-		mesh.material = new THREE.MeshPhongMaterial({map: texture2});
+		mesh.material = new THREE.MeshPhongMaterial({map: texture});
 		mesh.position.x = -5;
 		scene.add( mesh );
 		});
