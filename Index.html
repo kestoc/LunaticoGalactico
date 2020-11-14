@@ -71,6 +71,7 @@
 
 		loader2.load("casa.json", function( group ) {
 		mesh = group.children[0];
+		mesh.rotation.y += 89.5;
 		mesh.material = new THREE.MeshPhongMaterial({map: texture});
 		mesh.position.x = -12;
 		mesh.position.y = 10;
