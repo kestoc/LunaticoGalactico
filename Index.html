@@ -18,7 +18,8 @@
 	<script>
 		var texture = new THREE.TextureLoader().load( "Rojo.png" );
 		var texture1 = new THREE.TextureLoader().load( "Verde.png" );
-		var texture2 = new THREE.TextureLoader().load( "texturaCarro.jpg" );
+		var texture2 = new THREE.TextureLoader().load("texturaCarro.jpg");
+		var texture3 = new THREE.TextureLoader().load("texturaMan.png");
 		var light = new THREE.DirectionalLight( 0xffffff, 1 );
 		light.position.set( -20, 20, 20 );
 
@@ -87,13 +88,25 @@
             mesh.rotation.y += 300;
             mesh.material = new THREE.MeshPhongMaterial({ map: texture2 });
             mesh.position.x = 10;
-			mesh.position.y = 14;
+			mesh.position.y = 13.5;
 			mesh.position.z = 15.5;
             mesh.scale.set(10, 10, 10);
             scene.add(mesh);
         });
 
 		//Malla hombre
+        var loader4 = new THREE.ObjectLoader();
+
+        loader4.load("man.json", function (group) {
+            mesh = group.children[0];
+            mesh.rotation.y += 300;
+            mesh.material = new THREE.MeshPhongMaterial({ map: texture3 });
+            mesh.position.x = -14.5;
+            mesh.position.y = 12.8;
+            mesh.position.z = 0;
+            mesh.scale.set(0.03, 0.03, 0.03);
+            scene.add(mesh);
+        });
 
 		var render = function () {
 		requestAnimationFrame( render );
