@@ -18,7 +18,7 @@
 	<script>
 		var texture = new THREE.TextureLoader().load( "Rojo.png" );
 		var texture1 = new THREE.TextureLoader().load( "Verde.png" );
-		var texture2 = new THREE.TextureLoader().load( "texturabalon.jpg" );
+		var texture2 = new THREE.TextureLoader().load( "texturaCarro.jpg" );
 		var light = new THREE.DirectionalLight( 0xffffff, 1 );
 		light.position.set( -20, 20, 20 );
 
@@ -51,9 +51,11 @@
 		var material = new THREE.MeshNormalMaterial();
 		var cube = new THREE.Mesh( geometry, material );
 		scene.add( cube );*/
+
 		camera.position.z = 5;
 		controls = new THREE.OrbitControls( camera, renderer.domElement );
 
+		//Malla Monte
 		var loader = new THREE.ObjectLoader();
 
 		loader.load("MtFuji.json", function( group ) {
@@ -63,17 +65,34 @@
 		mesh.scale.set(5,10,5);
 		scene.add( mesh );
 		});
+
+		//Malla Casa
 		var loader2 = new THREE.ObjectLoader();
 
 		loader2.load("casa.json", function( group ) {
 		mesh = group.children[0];
 		mesh.material = new THREE.MeshPhongMaterial({map: texture});
-		mesh.position.x = -10;
+		mesh.position.x = -12;
 		mesh.position.y = 10;
-		mesh.scale.set(1,1,1);
+		mesh.scale.set(2,2,2);
 		scene.add( mesh );
 		});
 
+		//Malla carro
+        var loader3 = new THREE.ObjectLoader();
+
+        loader3.load("carro.json", function (group) {
+			mesh = group.children[0];
+            mesh.rotation.y += 300;
+            mesh.material = new THREE.MeshPhongMaterial({ map: texture2 });
+            mesh.position.x = 10;
+			mesh.position.y = 14;
+			mesh.position.z = 15.5;
+            mesh.scale.set(10, 10, 10);
+            scene.add(mesh);
+        });
+
+		//Malla hombre
 
 		var render = function () {
 		requestAnimationFrame( render );
