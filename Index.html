@@ -3,7 +3,7 @@
 <head>
 	<title>Basic Three.js App</title>
 	<style>
-		html, body {
+		html, body {	
 			margin: 0;
 			padding: 0;
 			overflow: hidden;
@@ -20,6 +20,8 @@
 		var texture1 = new THREE.TextureLoader().load( "Verde.png" );
 		var texture2 = new THREE.TextureLoader().load("texturaCarro.jpg");
 		var texture3 = new THREE.TextureLoader().load("texturaMan.png");
+		var texture4 = new THREE.TextureLoader().load("azul.jpg");
+		var texture5 = new THREE.TextureLoader().load("grey.png");
 		var light = new THREE.DirectionalLight( 0xffffff, 1 );
 		light.position.set( -20, 20, 20 );
 
@@ -81,32 +83,60 @@
 		});
 
 		//Malla carro
-        var loader3 = new THREE.ObjectLoader();
+		var loader3 = new THREE.ObjectLoader();
 
-        loader3.load("carro.json", function (group) {
-			mesh = group.children[0];
-            mesh.rotation.y += 300;
-            mesh.material = new THREE.MeshPhongMaterial({ map: texture2 });
-            mesh.position.x = 10;
-			mesh.position.y = 13.5;
-			mesh.position.z = 15.5;
-            mesh.scale.set(10, 10, 10);
-            scene.add(mesh);
-        });
+		loader3.load("carro.json", function (group) {
+		mesh = group.children[0];
+		mesh.rotation.y += 300;
+		mesh.material = new THREE.MeshPhongMaterial({ map: texture2 });
+		mesh.position.x = 10;
+		mesh.position.y = 13.5;
+		mesh.position.z = 15.5;
+		mesh.scale.set(10, 10, 10);
+		scene.add(mesh);
+		});
 
 		//Malla hombre
-        var loader4 = new THREE.ObjectLoader();
+		var loader4 = new THREE.ObjectLoader();
 
-        loader4.load("man.json", function (group) {
-            mesh = group.children[0];
-            mesh.rotation.y += 300;
-            mesh.material = new THREE.MeshPhongMaterial({ map: texture3 });
-            mesh.position.x = -14.5;
-            mesh.position.y = 12.8;
-            mesh.position.z = 0;
-            mesh.scale.set(0.03, 0.03, 0.03);
-            scene.add(mesh);
-        });
+		loader4.load("man.json", function (group) {
+		mesh = group.children[0];
+		mesh.rotation.y += 300;
+		mesh.material = new THREE.MeshPhongMaterial({ map: texture3 });
+		mesh.position.x = -14.5;
+		mesh.position.y = 12.8;
+		mesh.position.z = 0;
+		mesh.scale.set(0.01, 0.01, 0.01);
+		scene.add(mesh);
+		});
+
+		//Malla estacion
+		var loader5 = new THREE.ObjectLoader();
+
+		loader5.load("MioStation.json", function (group) {
+		mesh = group.children[0];
+		// mesh.rotation.y += 300;
+		mesh.material = new THREE.MeshPhongMaterial({ map: texture4 });
+		mesh.position.x = -50;
+		mesh.position.y = 0;
+		mesh.position.z = -10;
+		mesh.scale.set(0.08, 0.08, 0.08);
+		scene.add(mesh);
+		});
+
+		//Malla terreno
+		var loader6 = new THREE.ObjectLoader();
+
+		loader6.load("Terreno.json", function (group) {
+		mesh = group.children[0];
+		// mesh.rotation.y += 300;
+		mesh.material = new THREE.MeshPhongMaterial({ map: texture5 });
+		mesh.position.x = 0;
+		mesh.position.y = 0;
+		mesh.position.z = 0;
+		mesh.scale.set(0.08, 0.08, 0.08);
+		scene.add(mesh);
+		});
 
 		var render = function () {
 		requestAnimationFrame( render );
