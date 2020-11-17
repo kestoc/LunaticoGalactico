@@ -117,9 +117,9 @@
 		mesh = group.children[0];
 		// mesh.rotation.y += 300;
 		mesh.material = new THREE.MeshPhongMaterial({ map: texture4 });
-		mesh.position.x = -50;
+		mesh.position.x = -60;
 		mesh.position.y = 0;
-		mesh.position.z = -10;
+		mesh.position.z = 0;
 		mesh.scale.set(0.08, 0.08, 0.08);
 		scene.add(mesh);
 		});
@@ -137,6 +137,20 @@
 		mesh.scale.set(0.5, 1, 4.45);
 		scene.add(mesh);
 		});
+		//Malla estacion
+		var loader7 = new THREE.ObjectLoader();
+
+		loader7.load("carro.json", function (group) {
+		mesh = group.children[0];
+		mesh.rotation.z += 299.9;
+		mesh.material = new THREE.MeshPhongMaterial({ map: texture4 });
+		mesh.position.x = -63;
+		mesh.position.y = -18;
+		mesh.position.z = -35;
+		mesh.scale.set(17, 17, 17);
+		scene.add(mesh);
+		});
+
 
 		var render = function () {
 		requestAnimationFrame( render );
