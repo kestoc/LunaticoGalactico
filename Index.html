@@ -21,7 +21,7 @@
 		var texture2 = new THREE.TextureLoader().load("texturaCarro.jpg");
 		var texture3 = new THREE.TextureLoader().load("texturaMan.png");
 		var texture4 = new THREE.TextureLoader().load("azul.jpg");
-		var texture5 = new THREE.TextureLoader().load("gray.png");
+		var texture5 = new THREE.TextureLoader().load("texturaCarretera.jpg");
 		var light = new THREE.DirectionalLight( 0xffffff, 1 );
 		light.position.set( -20, 20, 20 );
 
@@ -106,7 +106,7 @@
 		mesh.position.x = -14.5;
 		mesh.position.y = 12.8;
 		mesh.position.z = 0;
-		mesh.scale.set(0.01, 0.01, 0.01);
+		mesh.scale.set(0.035, 0.035, 0.035);
 		scene.add(mesh);
 		});
 
@@ -131,10 +131,10 @@
 		mesh = group.children[0];
 		// mesh.rotation.y += 300;
 		mesh.material = new THREE.MeshPhongMaterial({ map: texture5 });
-		mesh.position.x = 0;
-		mesh.position.y = 0;
+		mesh.position.x = -52;
+		mesh.position.y = 0.1;
 		mesh.position.z = 0;
-		mesh.scale.set(10, 10, 10);
+		mesh.scale.set(0.5, 1, 4.45);
 		scene.add(mesh);
 		});
 
